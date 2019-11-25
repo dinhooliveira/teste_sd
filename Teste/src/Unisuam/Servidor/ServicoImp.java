@@ -18,6 +18,7 @@ public class ServicoImp implements Interface{
 	private double desconto = 0.0;
 	private double taxaJuros = 0.0;
 	
+	
 	int aceita;
 
 	public ServicoImp() {
@@ -161,6 +162,11 @@ public class ServicoImp implements Interface{
 	public void zeraContador() throws RemoteException{
 		ServicoImp.contaCliente = 0;
 		ServicoImp.contaPassos = 1;
+		valorRecebido = 0;
+		total = 0;
+		servico = 0;
+		desconto = 0; 
+		aceita = -1;
 	}
 
 }
