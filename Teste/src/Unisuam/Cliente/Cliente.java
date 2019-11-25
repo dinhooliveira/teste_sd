@@ -28,7 +28,7 @@ public class Cliente {
 			Interface	stub = (Interface) registry.lookup(nomeServico);
 
 			/*cria um stub que recebe o servico contendo os metodos remotos do servidor
-			 * Responsavel pela comunicaÁ„o entre clientes e servidor.
+			 * Responsavel pela comunica√ß√£o entre clientes e servidor.
 			 */
 
 			JOptionPane.showMessageDialog(null, "=====================================\n"
@@ -44,7 +44,7 @@ public class Cliente {
 					stub.setPassos(1);//2
 
 					while(stub.contaPassos() == 2) {
-						//Mensagem.mensagemAguardaSegundoCliente();
+						Mensagem.mensagemAguardaSegundoCliente();
 					}
 
 					stub.setServico(Mensagem.servico());
@@ -55,14 +55,14 @@ public class Cliente {
 					stub.setEntraDesconto(Mensagem.entraDesconto());
 					stub.setPassos(1);//6
 					
-					while(stub.contaPassos() == 6) {}
-					stub.setTaxaJuros(Mensagem.entraTaxaDeJuros());
-					stub.setPassos(1);//6
+//					while(stub.contaPassos() == 6) {}
+//					stub.setTaxaJuros(Mensagem.entraTaxaDeJuros());
+//					stub.setPassos(1);//6
 
-					while(stub.contaPassos() == 8) {}
+					while(stub.contaPassos() == 6) {}
 					stub.valorRecebido();
 
-					Mensagem.mensagemFinalCliente1(stub.getServico(), stub.getEntraDesconto(), stub.getTaxaJuros(),  stub.valorRecebido());
+					Mensagem.mensagemFinalCliente1(stub.getServico(), stub.getEntraDesconto(),  stub.valorRecebido());
 
 					stub.zeraContador();
 
@@ -73,17 +73,17 @@ public class Cliente {
 						stub.setPassos(1);//3
 
 						while(stub.contaPassos() == 3) {}
-						stub.setEntraDesconto(Mensagem.entraDesconto());
+						stub.setAceita(Mensagem.aceita());
 						stub.setPassos(1);//6
 						
-						while(stub.contaPassos() == 5) {}
-						stub.setTaxaJuros(Mensagem.entraTaxaDeJuros());
-						stub.setPassos(1);//6
+//						while(stub.contaPassos() == 5) {}
+//						stub.setTaxaJuros(Mensagem.entraTaxaDeJuros());
+//						stub.setPassos(1);//6
 
-						while(stub.contaPassos() == 7) {}
+						while(stub.contaPassos() == 5) {}
 						stub.valorRecebido();
 
-						Mensagem.mensagemFinalCliente1(stub.getServico(), stub.getEntraDesconto(), stub.getTaxaJuros(),  stub.valorRecebido());
+						Mensagem.mensagemFinalCliente2(stub.getServico(), stub.getEntraDesconto(),  stub.valorRecebido());
 
 
 						stub.zeraContador();
@@ -96,7 +96,7 @@ public class Cliente {
 			//}
 		}catch(Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "ERRO 404 - Servidor n„o encontrado: \n" + e);
+			JOptionPane.showMessageDialog(null, "ERRO 404 - Servidor n√£o encontrado: \n" + e);
 		}
 
 	}
@@ -110,9 +110,9 @@ public class Cliente {
 		String op = (String) JOptionPane.showInputDialog(null, "Escolha o servidor", "Servidores", JOptionPane.QUESTION_MESSAGE,null, servidor, servidor[0]);
 
 		if(op == servidor[0]) {
-			return "10.0.200.28";
+			return "10.0.218.19";
 		}else {
-			return "10.0.200.8";
+			return "10.0.218.19";
 		}
 
 	}
