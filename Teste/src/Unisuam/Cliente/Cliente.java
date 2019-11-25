@@ -53,11 +53,20 @@ public class Cliente {
 
 					stub.setServico(Mensagem.servico());
 					stub.setPassos(1);//4
-
-
+					
 					while(stub.contaPassos() == 4) {}
-					stub.setEntraDesconto(Mensagem.entraDesconto());
-					stub.setPassos(1);//6
+					if(stub.getAceita()==0){
+					     stub.setEntraDesconto(Mensagem.entraDesconto());
+					     stub.setPassos(1);//6
+					}else {
+					  JOptionPane.showInputDialog(null, "Cliente não aceitou!");
+					     stub.zeraContador();
+					     Cliente.comecar();
+					}
+
+// 					while(stub.contaPassos() == 6) {}
+// 					stub.setEntraDesconto(Mensagem.entraDesconto());
+// 					stub.setPassos(1);//6
 					
 //					while(stub.contaPassos() == 6) {}
 //					stub.setTaxaJuros(Mensagem.entraTaxaDeJuros());
