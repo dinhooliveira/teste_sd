@@ -17,6 +17,8 @@ public class ServicoImp implements Interface{
 	private  double servico = 0.0; 
 	private double desconto = 0.0;
 	private double taxaJuros = 0.0;
+	
+	int aceita;
 
 	public ServicoImp() {
 
@@ -39,6 +41,19 @@ public class ServicoImp implements Interface{
 		// TODO Auto-generated method stub
 		return this.servico;
 	}
+	
+	public void setAceita(int aceita) throws RemoteException {
+		this.aceita = aceita;
+	
+	}
+	
+
+	@Override
+	public int getAceita() throws RemoteException {
+		// TODO Auto-generated method stub
+		return this.aceita;
+	}
+	
 	
 
 	@Override
@@ -78,7 +93,7 @@ public class ServicoImp implements Interface{
 
 
 	/*
-	 * MÉTODOS QUE REALIZAM CALCULOS
+	 * MÃ‰TODOS QUE REALIZAM CALCULOS
 	 * 
 	 */
 
@@ -91,12 +106,12 @@ public class ServicoImp implements Interface{
 		System.out.println("********************");
 		System.out.println(this.servico+"\n");
 		System.out.println(this.desconto+"\n");
-		System.out.println(this.taxaJuros+"\n");
+//		System.out.println(this.taxaJuros+"\n");
 		System.out.println("********************");
 		System.out.println("********************");
 		double aux=0.0;
 
-		 aux = (this.servico - this.desconto) * (this.taxaJuros/100);
+		 aux = (this.servico - this.desconto);
 		return this.valorRecebido = aux;		
 	
 	}
@@ -130,12 +145,15 @@ public class ServicoImp implements Interface{
 	
 	@Override
 	public void setCliente(int valor) throws RemoteException{
+		System.out.print("Cliente entrou "+valor);
 		ServicoImp.contaCliente += valor;
 	}
 
 
 	@Override
 	public int getCliente() throws RemoteException{
+		
+		System.out.print("Cliente numero "+contaCliente);
 		return ServicoImp.contaCliente;
 	}
   
