@@ -33,12 +33,14 @@ public interface Interface extends Remote{
 	 */
 
 	public void setServico(String servico) throws RemoteException;
+	public void setAceita(int aceita) throws RemoteException;
 	public void setEntraDesconto(String desconto) throws RemoteException;	
 	public void setTaxaJuros(String taxaDeJuros) throws RemoteException;
 	
 	
 	public double getTotal() throws RemoteException;	
 	public double getServico() throws RemoteException;
+	public int getAceita() throws RemoteException;
 	double getEntraDesconto() throws RemoteException;	
 	public double getTaxaJuros() throws RemoteException;	
 	
