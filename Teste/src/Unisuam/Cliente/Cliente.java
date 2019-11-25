@@ -12,6 +12,10 @@ public class Cliente {
 
 
 	public static void main(String[] args) {
+		Cliente.comecar();
+	}
+	
+	public static void comecar() {
 		// TODO Auto-generated method stub
 
 
@@ -65,7 +69,8 @@ public class Cliente {
 					Mensagem.mensagemFinalCliente1(stub.getServico(), stub.getEntraDesconto(),  stub.valorRecebido());
 
 					stub.zeraContador();
-
+					Cliente.comecar();
+					
 					//}
 				}else
 					if(stub.getCliente() == 1) {
@@ -73,7 +78,7 @@ public class Cliente {
 						stub.setPassos(1);//3
 
 						while(stub.contaPassos() == 3) {}
-						stub.setAceita(Mensagem.aceita());
+						stub.setAceita(Mensagem.aceita(stub.getServico()));
 						stub.setPassos(1);//6
 						
 //						while(stub.contaPassos() == 5) {}
@@ -87,6 +92,7 @@ public class Cliente {
 
 
 						stub.zeraContador();
+						Cliente.comecar();
 					}
 			}catch(Exception e) {
 				stub.zeraContador();
@@ -112,7 +118,7 @@ public class Cliente {
 		if(op == servidor[0]) {
 			return "10.0.218.19";
 		}else {
-			return "10.0.218.19";
+			return "10.0.218.14";
 		}
 
 	}
