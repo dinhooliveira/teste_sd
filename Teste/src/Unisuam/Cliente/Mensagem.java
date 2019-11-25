@@ -8,7 +8,7 @@ public class Mensagem {
 
 
 /*
- * VALIDA«√O DE DADOS 
+ * VALIDA√á√ÉO DE DADOS 
  */
 	public static boolean validaEntrada(String entrada) {
 
@@ -35,7 +35,7 @@ public class Mensagem {
 	}
 
 	public static String servico() {
-		mensagem = JOptionPane.showInputDialog(null, "Entre com valor do serviÁo." + "\n" + "Ex: 50,00").replace(",",".");
+		mensagem = JOptionPane.showInputDialog(null, "Entre com valor da Venda." + "\n" + "Ex: 50,00").replace(",",".");
 
 		if(!validaEntrada(mensagem)) {
 			mensagemErro();
@@ -65,6 +65,12 @@ public class Mensagem {
 		return mensagem;
 	}
 	
+	public static int  aceita() {
+	  int resp = JOptionPane.showConfirmDialog(null, "Aceita o valor do servi√ßo?");
+	  return resp;
+
+	}
+	
 /*
  * MENSAGEM DE ERRO
  */
@@ -77,24 +83,24 @@ public class Mensagem {
 	 * 									METODOS PARA RESULTADO FINAL
 	 */	
 
-	public static void mensagemFinalCliente1(double servico, double desconto, double taxaDeJuros,  double valorRecebido) {
+	public static void mensagemFinalCliente1(double servico, double desconto,  double valorRecebido) {
 		JOptionPane.showMessageDialog(null, "------------------Cliente 1--------------------\n"
 				+ "*.*.*.*.*.*.*.*.*.VALORES INSERIDOS *.*.*.*.*.*.*.*.*.\n"
-				+ "Valor ServiÁo: " + String.format("%.2f",servico) + "\n" 
+				+ "Valor Servi√ßo: " + String.format("%.2f",servico) + "\n" 
 				+ "Valor Desconto: " + String.format("%.2f",desconto) + "\n" 
-				+ "Taxa de Juros: " + String.format("%.1f",taxaDeJuros) + "\n"
+//				+ "Taxa de Juros: " + String.format("%.1f",taxaDeJuros) + "\n"
 				+"----------------Resultado final-------------\n"
-				+ "Valor total: " + String.format("%.2f",valorRecebido) + "\n"
+				+ "Venda Confirmada no Valor de: " + String.format("%.2f",valorRecebido) + "\n"
 				+ "*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.");
 
 	}
 
-	public static void mensagemFinalCliente2(double servico, double desconto, double taxaDeJuros,  double valorRecebido) {
+	public static void mensagemFinalCliente2(double servico, double desconto,  double valorRecebido) {
 		JOptionPane.showMessageDialog(null, "------------------Cliente 2--------------------\n"
 				+ "*.*.*.*.*.*.*.*.*.VALORES INSERIDOS *.*.*.*.*.*.*.*.*.\n"
-				+ "Valor ServiÁo: " + String.format("%.2f",servico) + "\n" 
+				+ "Valor Servi√ßo: " + String.format("%.2f",servico) + "\n" 
 				+ "Valor Desconto: " + String.format("%.2f",desconto) + "\n" 
-				+ "Taxa de Juros: " + String.format("%.1f",taxaDeJuros) + "\n"
+//				+ "Taxa de Juros: " + String.format("%.1f",taxaDeJuros) + "\n"
 				+"----------------Resultado final-------------\n"
 				+ "Valor total: " + String.format("%.2f",valorRecebido) + "\n"
 				+ "*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.");
