@@ -65,8 +65,8 @@ public class Mensagem {
 		return mensagem;
 	}
 	
-	public static int  aceita() {
-	  int resp = JOptionPane.showConfirmDialog(null, "Aceita o valor do serviço?");
+	public static int  aceita(double valor) {
+	  int resp = JOptionPane.showConfirmDialog(null, "Aceita o valor do serviço?"+ " R$" + valor);
 	  return resp;
 
 	}
@@ -90,7 +90,7 @@ public class Mensagem {
 				+ "Valor Desconto: " + String.format("%.2f",desconto) + "\n" 
 //				+ "Taxa de Juros: " + String.format("%.1f",taxaDeJuros) + "\n"
 				+"----------------Resultado final-------------\n"
-				+ "Venda Confirmada no Valor de: " + String.format("%.2f",valorRecebido) + "\n"
+				+ "Venda Confirmada no Valor de : " + String.format("%.2f",valorRecebido) + "\n"
 				+ "*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.");
 
 	}
